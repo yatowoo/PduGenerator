@@ -48,9 +48,9 @@ double angulardistribution(double U)//此函数接收随机数，并返回theta�
     return result3;
 }
 
-double function(double* x,double* par)
+double thetafunc(double* x,double* par)
 {
-    double theta=x[0]/180*par[0];
+    double theta=x[0]/180*PI;
     double f;
     f=3*sin(theta)*pow(cos(theta),2);
     return f;
@@ -105,7 +105,7 @@ void sampleread()
     sample->SetBranchAddress("energy",&energy);
 
     //create three histograms
-    TH1D* hisangular=new TH1D("zenith","zenith",270,0,90);
+    TH1D* hiszenith=new TH1D("zenith","zenith",270,0,90);
     TH1D* hisenergy=new TH1D("energy","energy",99,1,100);
     TH1D* hisazimuth=new TH1D("azimuth","azimuth",720,0,360);
 
@@ -114,7 +114,7 @@ void sampleread()
     for(Long64_t i=0;i<nentries;i++)
     {
         sample->GetEntry(i);
-        hisangular->Fill(zenith);
+        hiszenith->Fill(zenith);
         hisenergy->Fill(energy);
         hisazimuth->Fill(azimuth);
     }
