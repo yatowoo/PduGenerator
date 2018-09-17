@@ -119,7 +119,7 @@ void sampleread()
         hisazimuth->Fill(azimuth);
     }
 
-    if(gROOT->IsBatch()) return;//没有图形，可以结束了，直接返回
+    if(gROOT->IsBatch()) return;
     new TBrowser();
     sample->StartViewer();
 }
