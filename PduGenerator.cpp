@@ -1,5 +1,3 @@
-
-//天顶角抽样、方位角抽样保存为一个root文件，能量抽样写成另一个root文件
 #include "TH1D.h"
 #include "TF1.h"
 #include "TCanvas.h"
